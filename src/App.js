@@ -24,13 +24,13 @@ import ProductDetailPage from "./pages/ProductDetail";
 const router = createBrowserRouter([
   {
     //this absolute path
-    path: "/root",
+    path: "/",
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
       //without slash --> relative path , so this path depending to parent ,
       //example when navigate to relative path will become like this "/root/products" or /root/products/3"
-      { path: "", element: <HomePage /> },
+      { index: true, element: <HomePage /> }, // path: ''
       { path: "products", element: <ProductsPage /> },
       { path: "products/:productId", element: <ProductDetailPage /> },
     ],
